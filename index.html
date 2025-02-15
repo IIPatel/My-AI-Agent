@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+     <html>
+     <head>
+       <title>Your AI Assistant</title>
+       <script>
+         async function askAI() {
+           const prompt = document.getElementById("prompt").value;
+           const response = await fetch("YOUR_PIPEDREAM_URL_HERE", {
+             method: "POST",
+             headers: { "Content-Type": "application/json" },
+             body: JSON.stringify({ prompt: prompt })
+           });
+           const data = await response.json();
+           document.getElementById("answer").innerText = data.response;
+         }
+       </script>
+     </head>
+     <body>
+       <h1>Ask Me Anything! 🌟</h1>
+       <input type="text" id="prompt" placeholder="Type your question...">
+       <button onclick="askAI()">Ask</button>
+       <div id="answer"></div>
+       <!-- Buy Me A Coffee Button -->
+       <script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="YOUR_BMC_USERNAME" data-description="Support my AI Agent!" data-message="" data-color="#FFDD00" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
+     </body>
+     </html>
